@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<h1>PHP  POO - Exemplo 1</h1>
+<h1>PHP  POO - Exemplo 2</h1>
 <hr>
 <h2>Assusntos abordados:</h2>
 <ul>
-    <li>Criação de classe</li>
-    <li>Importação do arquivo de classe</li>
     <li>Criação dos objetos</li>
+    <li>Uso do método construtor</li>
+    <li>Uso do <code>$this</code> para acessar as propriedades.</li>
 </ul>
 
 <?php
@@ -22,8 +22,8 @@
 require_once "src/Cliente.php";
 
 // Criação dos objetos
-$clienteA = new Cliente;
-$clienteB = new Cliente;
+$clienteA = new Cliente('Palloma', 'palloma@gmail.com');
+$clienteB = new Cliente('Igor', 'igor@gmail.com');
 ?>
 <pre> <?=var_dump($clienteA, $clienteB)?> </pre>
     
