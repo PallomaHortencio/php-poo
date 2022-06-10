@@ -18,7 +18,7 @@
 
 <?php
 // Importando a classe
-/*  require_once "src/Cliente.php";   SuperClasse */
+/*  require_once "src/Cliente.php"; SuperClasse */
 require_once "src/PessoaFisica.php";  // SubClasse
 require_once "src/PessoaJuridica.php"; 
 
