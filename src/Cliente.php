@@ -1,5 +1,6 @@
 <?php
-class Cliente {
+/* Classes abstratas NÃO PODEM SER INSTANCIADAS. Ou seja, não é possivel criar um objeto/variável a partit dessa classe */
+abstract class Cliente {
     private string $nome;
     private string $email;
     private string $senha;
