@@ -13,15 +13,16 @@
 <h2>Assusntos abordados:</h2>
 <ul>
    <li>Herança</li>
-   <li>Classe Abstrato</li>
-</ul>
+   <li>Classe Abstrato (não pode ser instanciadas) </li>
+   <li>Métodos/propriedades protegidos (acessíveis apenas pela subclasse) </li>
+   </ul>
 
 <?php
 // Importando a classe
 /*  require_once "src/Cliente.php"; SuperClasse */
 require_once "src/PessoaFisica.php";  // SubClasse
-require_once "src/PessoaJuridica.php"; 
-require_once "src/MEI.php";
+/* require_once "src/PessoaJuridica.php"; subclasse */
+require_once "src/MEI.php"; // subclasse
 
 $clientePF = new PessoaFisica;
 $clientePF->setNome('Palloma');
@@ -48,6 +49,7 @@ $clienteMEI->setAreaDeAtuacao('Música');
 
 <pre> <?=var_dump($clientePF)?> </pre>
 <pre> <?=var_dump($clientePJ)?> </pre>
+<pre> <?=var_dump($clienteMEI)?> </pre>
 
 <?php 
 $cliente = new Cliente; // ERRO, pois cliente é abstract(abstrato)
