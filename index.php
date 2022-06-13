@@ -16,6 +16,7 @@
    <li>Classe Abstrato (não pode ser instanciadas) </li>
    <li>Métodos/propriedades protegidos (acessíveis apenas pela subclasse) </li>
    </ul>
+   <hr>
 
 <?php
 // Importando a classe
@@ -37,15 +38,25 @@ $clientePJ = new PessoaJuridica;
 $clientePJ->setNome('Debora Abdala');
 $clientePJ->setCnpj('12. 345. 678/0001-09'); 
 $clientePJ->setAnoFundacao(2001);
-$clientePJ->setNomeFantasia('Lojinha da Esquina');
+$clientePJ->setNome('Lojinha da Esquina');
 
 $clienteMEI = new MEI;
 $clienteMEI->setNome('Marcos Antonio');
-$clienteMEI->setNomeFantasia('Banda da Turminha');
+$clienteMEI->setNome('Banda da Turminha');
 $clienteMEI->setCnpj('12. 345. 678/0001-09');
 $clienteMEI->setAreaDeAtuacao('Música');
 ?>
 
+<h3>Pessoa Fisica</h3>
+<p> <?=$clientePF->getNome()?> </p>
+
+<h3>Pessoa Juridica</h3>
+<p> <?=$clientePJ->getNome()?> </p>
+<hr>
+<section> <?=$clientePF->exibirDados()?> </section>
+<hr>
+<section> <?=$clientePJ->exibirDados()?> </section>
+<hr>
 
 <pre> <?=var_dump($clientePF)?> </pre>
 <pre> <?=var_dump($clientePJ)?> </pre>
@@ -55,6 +66,8 @@ $clienteMEI->setAreaDeAtuacao('Música');
 $cliente = new Cliente; // ERRO, pois cliente é abstract(abstrato)
 ?>
 <pre> <?=var_dump($cliente)?> </pre>
+
+
 
     
 </body>
