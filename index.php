@@ -21,6 +21,7 @@
 /*  require_once "src/Cliente.php"; SuperClasse */
 require_once "src/PessoaFisica.php";  // SubClasse
 require_once "src/PessoaJuridica.php"; 
+require_once "src/MEI.php";
 
 $clientePF = new PessoaFisica;
 $clientePF->setNome('Palloma');
@@ -36,6 +37,12 @@ $clientePJ->setNome('Debora Abdala');
 $clientePJ->setCnpj('12. 345. 678/0001-09'); 
 $clientePJ->setAnoFundacao(2001);
 $clientePJ->setNomeFantasia('Lojinha da Esquina');
+
+$clienteMEI = new MEI;
+$clienteMEI->setNome('Marcos Antonio');
+$clienteMEI->setNomeFantasia('Banda da Turminha');
+$clienteMEI->setCnpj('12. 345. 678/0001-09');
+$clienteMEI->setAreaDeAtuacao('Música');
 ?>
 
 
