@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 5</title>
+    <title>Exemplo 7</title>
 </head>
 <body>
 
-<h1>PHP  POO - Exemplo 5</h1>
+<h1>PHP  POO - Exemplo 7</h1>
 <hr>
 <h2>Assusntos abordados:</h2>
 <ul>
-   <li>Herança</li>
-   <li>Classe Abstrato (não pode ser instanciadas) </li>
-   <li>Métodos/propriedades protegidos (acessíveis apenas pela subclasse) </li>
+   <li>Propreidades e Métodos Estáticos</li>
+  
    </ul>
    <hr>
 
@@ -27,45 +26,22 @@ require_once "src/MEI.php"; // subclasse
 
 $clientePF = new PessoaFisica;
 $clientePF->setNome('Palloma');
-$clientePF->setEmail('palloma@gmail.com');
-$clientePF->setSenha('123dfg');
-$clientePF->setCpf('123.456.789-00');
-$clientePF->setIdade(21);
+$clientePF->setIdade(61); 
 
+// Acessando uma propriedade estática
+PessoaFisica::$cidade = "São Paulo";
 
+// Acessando e lendo o valor de uma propriedade estática
+echo PessoaFisica::$cidade;
 
-$clientePJ = new PessoaJuridica;
-$clientePJ->setNome('Debora Abdala');
-$clientePJ->setCnpj('12. 345. 678/0001-09'); 
-$clientePJ->setAnoFundacao(2001);
-$clientePJ->setNome('Lojinha da Esquina');
-
-$clienteMEI = new MEI;
-$clienteMEI->setNome('Marcos Antonio');
-$clienteMEI->setNome('Banda da Turminha');
-$clienteMEI->setCnpj('12. 345. 678/0001-09');
-$clienteMEI->setAreaDeAtuacao('Música');
 ?>
 
 <h3>Pessoa Fisica</h3>
 <p> <?=$clientePF->getNome()?> </p>
-
-<h3>Pessoa Juridica</h3>
-<p> <?=$clientePJ->getNome()?> </p>
-<hr>
-<section> <?=$clientePF->exibirDados()?> </section>
-<hr>
-<section> <?=$clientePJ->exibirDados()?> </section>
-<hr>
-
-<pre> <?=var_dump($clientePF)?> </pre>
-<pre> <?=var_dump($clientePJ)?> </pre>
-<pre> <?=var_dump($clienteMEI)?> </pre>
-
-<?php 
-$cliente = new Cliente; // ERRO, pois cliente é abstract(abstrato)
-?>
-<pre> <?=var_dump($cliente)?> </pre>
+<p> <?=$clientePF->getIdade()?> </p>
+<p>Tipo de atendimento:
+    <?=PessoaFisica::verificaIdade($clientePF->getIdade())?>
+</p>
 
 
 
